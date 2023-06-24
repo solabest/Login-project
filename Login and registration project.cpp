@@ -15,7 +15,7 @@ cout<<"                                   Welcome to Login page                 
 cout<<"\t\t\t_______________________            Menu       __________________________\n\n\n";
 cout<<"\t| Press 1 to LOGIN                       |"<<endl;
 cout<<"\t| Press 2 to REGISTRATION                |"<<endl;
-cout<<"\t| Press 3 to FORGOT PASSWORD             |"<<endl;
+cout<<"\t| Press 3 to FORGET PASSWORD             |"<<endl;
 cout<<"\t| Press 4 to EXIT                        |"<<endl;
 
 int choice;
@@ -90,5 +90,63 @@ system("cls");
 cout<<"Successfully Registered! \n";
 
 main();
+
+}
+
+// forgot function definition
+
+void forgot(){
+
+    system("cls");
+    int option;
+    cout<<"\t\t\t Forgot your password\n";
+    cout<<"Press 1 to search your id by username"<<endl;
+    cout<<"press 2 to go to back to main menu\n";
+    cin>>option;
+
+    switch(option){
+        case 1:
+        {
+            int count=0;
+            string susername,sId,spass;
+            cout<<"\n\t\t\tEnter the username you remembered :";
+            cin>>susername;
+
+            ifstream f2("records.txt");
+            while(f2>>sid>>spass){
+                if(sid==susername){
+                    count=1;
+                }
+                f2.close();
+
+                if (count==1){
+
+                    cout<<"\n\n Your account is found!\n";
+                    cout<<"\n Your password is : "<<spass;
+                }
+                else {
+                    cout<<"\n\t Sorry! this account is not found! \n";
+                    main();
+                }
+                break;
+            }
+
+
+            case 2:
+            {
+                main();
+            }
+
+            default: cout<<"\t\t\t WRONG CHOICE! TRY AGAIN\n";
+            forgot();
+        }
+    
+    
+    
+    
+    
+    
+    
+    }
 
 }
