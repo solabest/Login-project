@@ -2,6 +2,7 @@
 #include<iostream>
 #include<fstream>
 #include<string.h>
+#include<cstdlib>
 
 using namespace std;
 
@@ -9,9 +10,9 @@ void login();
 void registration();
 void forgot();
 int main(){
-    
+
 cout<<"\t\t\t_______________________________________________________________________\n\n\n";
-cout<<"                                   Welcome to Login page                       \n\n\n";
+cout<<"                                                    Welcome to Login page                       \n\n\n";
 cout<<"\t\t\t_______________________            Menu       __________________________\n\n\n";
 cout<<"\t| Press 1 to LOGIN                       |"<<endl;
 cout<<"\t| Press 2 to REGISTRATION                |"<<endl;
@@ -105,10 +106,10 @@ void forgot(){
     cin>>option;
 
     switch(option){
-        case 1:
+        case 1 :
         {
             int count=0;
-            string susername,sId,spass;
+            string susername,sid,spass;
             cout<<"\n\t\t\tEnter the username you remembered :";
             cin>>susername;
 
@@ -129,24 +130,17 @@ void forgot(){
                     main();
                 }
                 break;
-            }
-
-
-            case 2:
+            };
+        }
+    case 2 :
             {
                 main();
+
             }
 
             default: cout<<"\t\t\t WRONG CHOICE! TRY AGAIN\n";
             forgot();
-        }
-    
-    
-    
-    
-    
-    
-    
+
     }
 
 }
