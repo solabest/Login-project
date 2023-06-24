@@ -39,7 +39,7 @@ switch(choice){
 }
 
 }
-
+// login function definition
 void login(){
     system("cls");
     int count;
@@ -51,7 +51,7 @@ cin>>usernameId;
 cout<<"\t\t\tPASSWORD ";
 cin>>password;
 
-ifstream input("records.txt");
+ifstream input("records.txt");//retrieve the username and password from records file
 
 while(input>>id>>passcode){
 
@@ -71,5 +71,24 @@ else {
     main();
 }
 
+
+}
+//registration function definition
+
+void registration(){
+    system("cls");
+    string rusernameid,rpassword,rid,rpasscode;
+    cout<<"\t\t\t Enetr username : ";
+    cin>>rusernameid;
+    cout<<"\t\t\t Enter the password : ";
+    cin>>rpassword;
+
+
+    ofstream f1("record.txt",ios::app);//store the username and password in records file
+f1<<rusernameid<<' '<<rpassword<<endl;
+system("cls");
+cout<<"Successfully Registered! \n";
+
+main();
 
 }
